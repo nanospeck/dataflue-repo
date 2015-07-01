@@ -1,0 +1,16 @@
+package dataflue.cip.krule;
+
+import java.lang.Number;
+import dataflue.cip.krule.entities.ConsumerInsight;
+
+rule "Apply Discount"
+	dialect "mvel"
+	when
+		cs : ConsumerInsight( threshold >= "70" )
+	then
+		modify( cs ) {
+				setOfferValue( "1000" ), 
+				setOfferType( "cash discount" ), 
+				setOfferName( "premium" )
+		}
+end

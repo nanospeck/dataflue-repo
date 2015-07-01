@@ -1,0 +1,9 @@
+package dataflue.cip.krule.rules;
+
+import java.lang.Number;
+
+rule "Apply Discount"
+	dialect "mvel"
+	when
+	then
+end
